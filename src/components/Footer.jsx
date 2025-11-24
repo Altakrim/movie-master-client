@@ -3,7 +3,7 @@ import { FaFacebook, FaFacebookF, FaInstagramSquare, FaTwitter } from "react-ico
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content flex justify-between px-20 md:flex-row flex-col items-center">
+        <footer className="footer p-10 text-base-content flex justify-between px-20 md:flex-row flex-col items-center">
            
   <nav className="" >
     <span className='footer-title'>Quick Links</span>

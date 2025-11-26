@@ -24,7 +24,7 @@ const features = [
   }
 ];
 
-const AboutPlatform = () => {
+const AboutSection = () => {
   return (
     <div className="w-full bg-gray-900 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center text-white">
@@ -40,7 +40,7 @@ const AboutPlatform = () => {
           experience smoother and smarter.
         </p>
 
-        {/* Features Grid */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <div
@@ -58,7 +58,7 @@ const AboutPlatform = () => {
   );
 };
 
-export default AboutPlatform;
+export default AboutSection;
 
 
 

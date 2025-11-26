@@ -8,11 +8,6 @@ import UserDropdown from "./UserDropdown";
 const Navbar = () => {
   const {user} = useContext(AuthContext);
 
-  // const handleLogout = () => {
-  //   logoutUser()
-  //    .then(() => console.log("User logged out"))
-  //    .catch((error) => console.log(error));
-  // };
   const navLinks = (
     <>
       <li>
@@ -23,7 +18,7 @@ const Navbar = () => {
       </li>
       {user && (
                 <li>
-                    <NavLink to="/my-collection" className="font-semibold">My Collection</NavLink>
+                    <NavLink to="/dashboard" className="font-semibold">My Collection</NavLink>
                 </li>
             )}
     </>

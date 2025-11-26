@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getTopRatedMovies } from "../../API/TMDB";
-// import { getTopRatedMovies } from "../api/TMDB";
+const icon = '/public/icon_star.png'
 
-const TopRated = () => {
+const TopRatedSection = () => {
   const [topMovies, setTopMovies] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,10 @@ const TopRated = () => {
               className="rounded"
             />
             <h3 className="text-sm mt-2">{movie.title}</h3>
-            <p className="text-yellow-400 text-sm">⭐ {movie.vote_average}</p>
+            <span className="flex items-center gap-2">
+               <img src={icon} alt="" className="w-4"/>
+              <p className="text-yellow-400 text-sm"> {movie.vote_average}</p>
+            </span>
           </div>
         ))}
       </div>
@@ -30,4 +33,4 @@ const TopRated = () => {
   );
 };
 
-export default TopRated;
+export default TopRatedSection;

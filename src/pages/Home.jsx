@@ -5,11 +5,12 @@ import TopRatedSection from './homePages/TopRatedSection';
 import RecentMoviesSection from './homePages/RecentMoviesSection';
 import GenreSection from './homePages/GenreSEction';
 import AboutSection from './homePages/AboutSection';
+import Loader from '../components/Loader';
 
 const Home = () => {
     return (
        <>
-       <HeroSection />
+         <HeroSection />
        <StatsSection />
        <TopRatedSection />
        <RecentMoviesSection />

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+const icon = '/public/icon_star.png'
 
 const RecentMoviesSection = () => {
      const [movies, setMovies] = useState([]);
@@ -26,10 +27,14 @@ const RecentMoviesSection = () => {
             />
 
             <h3 className="font-semibold mt-2">{movie.title}</h3>
-
-            <p className="text-sm">
-              ⭐ {movie.rating}
+             <span className="flex items-center gap-2">
+               <img src={icon} alt="" className="w-4"/>
+               <p className="text-sm">
+               {movie.rating}
             </p>
+               </span>
+
+            
              <p className="text-xs mt-2 text-gray-400">
                 Added: {new Date(movie.createdAt).toLocaleDateString()}
               </p>
@@ -41,4 +46,5 @@ const RecentMoviesSection = () => {
 };
 
 export default RecentMoviesSection;
+
 

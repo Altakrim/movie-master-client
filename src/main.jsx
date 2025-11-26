@@ -10,7 +10,7 @@ import AuthProvider from './providers/AuthProvider.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}  fallbackElement={<p className="text-center">Loading...</p>} />
     </AuthProvider>
   </StrictMode>
 )

@@ -9,7 +9,8 @@ import Dashboard from "../pages/Dashboard";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import MyMovies from "../pages/dashboard/MyMovies";
 import AddMovie from "../pages/dashboard/AddMovie";
-import Profile from "../pages/dashboard/Profile";
+import MovieDetails from "../pages/MovieDetails";
+import UpdateMovie from "../pages/dashboard/updateMovie";
 
 const router = createBrowserRouter([
     {
@@ -19,44 +20,40 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-            },{
+            },
+            {
                 path: "/login",
                 element: <Login />,
             },{
                 path: "/register",
                 element: <Register />,
-            },{ 
-                path: "/dashboard",
-                element: (
-                    <PrivateRoute>
-                           <Dashboard />
-                        </PrivateRoute>
-                ),
-                children: [
-                    {
-                        path:"",
-                        element: <DashboardHome />
-                    },
-                    {
-                        path: "my-movies",
-                        element: <MyMovies />
-                    },
-                    {
-                        path: "add-movie",
-                        element:<AddMovie />
-                    },
-                    {
-                        path: "profile",
-                        element: <Profile />
-                    },
-                ]
-                        
-
             },
             {
                 path: "/movies",
                 element: <AllMovies />,
             },
+            {
+                path: "/movies/:id",
+                element: <MovieDetails />,
+                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+            }, 
+            {
+                
+             path: "/dashboard",
+             element: (
+              <PrivateRoute>
+            <Dashboard />
+                </PrivateRoute>
+        ),
+        children: [
+          { path: "", element: <DashboardHome /> },
+          { path: "/dashboard/my-movies", element: <MyMovies /> },
+          { path: "/dashboard/add-movie", element: <AddMovie /> },
+          {path: "update-movie/:id", element:<UpdateMovie />},
+         
+        ],
+      },
+            
         ]
     }
 ]);

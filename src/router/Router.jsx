@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: "/movies/:id",
                 element: <MovieDetails />,
-                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({params}) => fetch(`https://movie-master-server-ebon.vercel.app/movies/${params.id}`)
             }, 
             {
                 

@@ -11,7 +11,7 @@ const UpdateMovie = () => {
 
   // Fetch movie by ID
   useEffect(() => {
-    fetch(`http://localhost:5000/movies/${id}`)
+    fetch(`https://movie-master-server-ebon.vercel.app/movies/${id}`)
       .then((res) => res.json())
       .then((data) => setMovie(data))
       .catch((err) => console.error(err));
@@ -46,7 +46,7 @@ const UpdateMovie = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:5000/movies/${id}`, {
+      const res = await fetch(`https://movie-master-server-ebon.vercel.app/movies/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

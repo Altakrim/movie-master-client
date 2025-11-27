@@ -24,7 +24,7 @@ const StatsSection = () => {
     
     const fetchUsersCount = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/count");
+        const res = await axios.get("https://movie-master-server-ebon.vercel.app/api/users/count");
 
         setTotalUsers(res.data.total_users);
       } catch (error) {

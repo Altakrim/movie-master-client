@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaAsterisk } from "react-icons/fa";
-export const img = "/public/icon_star.png"
+export const img = "./public/icon_star.png"
 
 const HeroSection = () => {
   const [movies, setMovies] = useState([]);

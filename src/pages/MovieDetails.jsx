@@ -14,16 +14,16 @@ const MovieDetails = () => {
   if (loading) return <Loader />;
   if (!movie) return <Loader />;
 
-  // Check if logged-in user is the owner
+  
   const isOwner = user?.email === movie?.addedBy;
 
-  // Delete function
+  
   const handleDelete = async () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this movie?");
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/movies/${movie._id}`, {
+      const res = await fetch(`https://movie-master-server-ebon.vercel.app/movies/${movie._id}`, {
         method: "DELETE",
       });
 

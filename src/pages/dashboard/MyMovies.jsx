@@ -12,7 +12,7 @@ const MyMovies = () => {
 
     const fetchMovies = async () => {
       try {
-        const res = await fetch("http://localhost:5000/movies");
+        const res = await fetch("https://movie-master-server-ebon.vercel.app/movies");
         const data = await res.json();
 
         const userMovies = data.filter((movie) => movie.addedBy === user.email);
@@ -34,7 +34,7 @@ const MyMovies = () => {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/movies/${id}`, {
+      const res = await fetch(`https://movie-master-server-ebon.vercel.app/movies/${id}`, {
         method: "DELETE",
       });
 

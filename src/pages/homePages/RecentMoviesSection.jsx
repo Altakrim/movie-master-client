@@ -6,7 +6,7 @@ const RecentMoviesSection = () => {
      const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/movies/recent")
+    axios.get("https://movie-master-server-ebon.vercel.app/api/movies/recent")
       .then((res) => setMovies(res.data))
       .catch((err) => console.log("Recent Movies Error:", err));
   }, []);

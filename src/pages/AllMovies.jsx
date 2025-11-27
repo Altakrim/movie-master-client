@@ -7,7 +7,7 @@ const AllMovies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/movies")
+    fetch("https://movie-master-server-ebon.vercel.app/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch((err) => console.error(err));
